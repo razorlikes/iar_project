@@ -5,10 +5,10 @@ const environment = {
     db:{
         host: 'iar-mongo.inf.h-brs.de',
         port: 27017,
-        username: 'iarframework',
-        password: 'iarframework!',
-        authSource: 'iarframework',
-        name: 'iarframework'
+        username: 'team_18',
+        password: 'team_18!',
+        authSource: 'team_18',
+        name: 'team_18'
     },
     corsOrigins: [
         'http://iar-frontend.inf.h-brs.de'
