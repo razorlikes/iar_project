@@ -17,4 +17,34 @@ router.get('/user', checkAuthorization(), userApi.getSelf);
 const peopleDemoApi = require('../apis/people-demo-api');
 router.get('/people', checkAuthorization(), peopleDemoApi.getPeople);
 
+const salesmanApi = require("../apis/salesman-api");
+router.get('/salesmen', checkAuthorization(), salesmanApi.getSalesmen);
+router.get('/salesmen/:id', checkAuthorization(), salesmanApi.getSalesmenById);
+router.delete('/salesmen', checkAuthorization(), salesmanApi.deleteSalesmen);
+router.delete('/salesmen/:id', checkAuthorization(),salesmanApi.deleteSalesmenById);
+router.post('/salesmen', checkAuthorization(), salesmanApi.createSalesmen);
+router.put('/salesmen/:id', checkAuthorization(), salesmanApi.updateSalesmen);
+
+const evaluationRecordsApi = require("../apis/evaluation-record-api")
+router.get('/evaluationRecords', checkAuthorization(), evaluationRecordsApi.getRecords);
+router.get('/evaluationRecords/:id/:yearOfPerformance', checkAuthorization(), evaluationRecordsApi.getRecordByIdAndYear);
+router.post('/evaluationRecords', checkAuthorization(),evaluationRecordsApi.createRecord);
+router.put('/evaluationRecords/:id/:yearOfPerformance', checkAuthorization(), evaluationRecordsApi.updateRecord);
+router.delete('/evaluationRecords/:id/:yearOfPerformance', checkAuthorization(), evaluationRecordsApi.deleteRecord);
+
+const ocrxApi = require("../apis/ocrx-api");
+router.get('/ocrx/products/:id', checkAuthorization(), ocrxApi.getProductById);
+router.get('/ocrx/customers', checkAuthorization(), ocrxApi.getAllCustomers);
+router.get('/ocrx/customers/:id', checkAuthorization(), ocrxApi.getCustomerById);
+router.get('/ocrx/orders', checkAuthorization(),ocrxApi.getAllOrders);
+router.get('/ocrx/orders/:id/positions', checkAuthorization(), ocrxApi.getSalesPositions);
+router.get('/ocrx/salesmen', checkAuthorization(), ocrxApi.getAllSalesman);
+router.get('/ocrx/salesmen/:id', checkAuthorization(), ocrxApi.getSalesmanById);
+router.get('/ocrx/salesmen/:id/orders/:year', checkAuthorization(), ocrxApi.getOrdersOfSalesman);
+
+const ohrmApi = require("../apis/ohrm-api");
+router.get('/ohrm/salesmen', checkAuthorization(), ohrmApi.getAllSalesmen);
+router.get('/ohrm/salesmen/:id', checkAuthorization(), ohrmApi.getSalesmenById);
+router.put('/ohrm/salesmen/:id/bonus/:year/:bonus', checkAuthorization(), ohrmApi.addBonusSalary);
+
 module.exports = router;

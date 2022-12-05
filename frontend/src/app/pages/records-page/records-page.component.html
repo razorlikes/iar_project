@@ -1,0 +1,44 @@
+<h1>Evaluation Records</h1>
+
+<form (submit)="$event.preventDefault()">
+    <mat-form-field appearance="fill" style="margin:20px">
+        <mat-label>Employee ID</mat-label>
+        <input matInput #first>
+    </mat-form-field>
+    <button mat-raised-button>Search</button>
+</form>
+
+<table mat-table class="mat-elevation-z8 cdk-table" style="margin:20px; width:514px" [dataSource]="people">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Year</th>
+        <td mat-cell *matCellDef="let person">{{person.age}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Sale Bonus</th>
+        <td mat-cell *matCellDef="let person">{{person.age}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="color">
+        <th mat-header-cell *matHeaderCellDef>Social Bonus</th>
+        <td mat-cell *matCellDef="let person">{{person.age}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef>Total Bonus</th>
+        <td mat-cell *matCellDef="let person" >{{person.age}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="remarks">
+        <th mat-header-cell *matHeaderCellDef>Remarks</th>
+        <td mat-cell *matCellDef="let person" >{{person.id}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px">Add Record</button>
+<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px">Delete Record</button>
+<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px">Update Record</button>
