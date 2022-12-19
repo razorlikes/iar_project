@@ -1,5 +1,11 @@
 {
   "devDependencies": {
     "swagger-autogen": "^2.22.0"
+  },
+  "dependencies": {
+    "chai": "^4.3.7",
+    "chai-exclude": "^2.1.0",
+    "mocha": "^10.2.0",
+    "sinon": "^15.0.1"
   }
 }
