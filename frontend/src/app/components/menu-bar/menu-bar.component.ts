@@ -17,10 +17,10 @@ export class MenuBarComponent implements OnInit {
     This array holds the definition of the menu's buttons.
    */
     buttons = [
-        {title: 'Welcome', routerLink: ''}, // the tile is the text on the button, the routerLink specifies, where it will navigate
-        {title: 'Example', routerLink: 'example'},
+        {title: 'Dashboard', routerLink: ''}, // the tile is the text on the button, the routerLink specifies, where it will navigate
         {title: 'Salesmen', routerLink: 'salesmen'},
         {title: 'Evaluation Records', routerLink: 'records'},
+        {title: 'My Evaluation Records', routerLink: 'myrecords'},
     ];
 
     /**

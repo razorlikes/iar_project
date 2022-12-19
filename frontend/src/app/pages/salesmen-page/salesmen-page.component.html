@@ -1,19 +1,28 @@
 <h1>Salesmen</h1>
 
-<table mat-table class="mat-elevation-z8 cdk-table" style="margin:20px; width:514px" [dataSource]="people">
+<table mat-table class="mat-elevation-z8 cdk-table" style="margin:20px; width:514px" [dataSource]="salesmen">
+    <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+        </th>
+        <td mat-cell *matCellDef="let row">
+            <mat-radio-button (click)="$event.stopPropagation()"
+                              (change)="$event ? selection.toggle(row) : null"
+                              [checked]="selection.isSelected(row)">
+            </mat-radio-button>
+        </td>
+    </ng-container>
+
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>Employee ID</th>
-        <td mat-cell *matCellDef="let person">{{person.id}}</td>
+        <td mat-cell *matCellDef="let salesman">{{salesman.sid}}</td>
     </ng-container>
-
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td mat-cell *matCellDef="let person">{{person.name}}</td>
+        <td mat-cell *matCellDef="let salesman">{{salesman.firstName}} {{salesman.lastName}}</td>
     </ng-container>
-
-    <ng-container matColumnDef="color">
-        <th mat-header-cell *matHeaderCellDef>Department</th>
-        <td mat-cell *matCellDef="let person">{{person.favourite_color.name}}</td>
+    <ng-container matColumnDef="jobTitle">
+        <th mat-header-cell *matHeaderCellDef>Job Title</th>
+        <td mat-cell *matCellDef="let salesman">{{salesman.jobTitle}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -21,6 +30,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
 
-<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px">Add Salesman</button>
-<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px">Delete Salesman</button>
-<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px">Update Salesman</button>
+<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px" (click)="addSalesman()">Add Salesman</button>
+<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px" (click)="deleteSalesman()">Delete Salesman</button>
+<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px" (click)="openDialog()">Update Salesman</button>

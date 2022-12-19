@@ -6,7 +6,7 @@ class EvaluationRecord {
         this.year = body.year;
         this.orderEval = body.orderEval;
         this.socialEval = body.socialEval;
-        this.ordersBonus = body.ordersBonus;
+        this.orderBonus = body.orderBonus;
         this.socialBonus = body.socialBonus;
         this.totalBonus = body.totalBonus;
         this.remarks = body.remarks;

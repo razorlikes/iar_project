@@ -15,7 +15,6 @@ export class RecordsPageComponent implements OnInit {
     constructor(private peopleDemoService: PeopleDemoService) { }
 
     ngOnInit(): void {
-        this.fetchPeople();
     }
 
     fetchPeople(): void{

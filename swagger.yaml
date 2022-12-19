@@ -103,11 +103,30 @@ paths:
           description: Internal Server Error
     put:
       description: 'Update a salesman by ID'
+      consumes:
+        - application/json
       parameters:
         - name: id
           in: path
           required: true
           type: string
+        - name: salesman
+          in: body
+          schema:
+            type: object
+            required:
+              - userName
+            properties:
+              ocrxID:
+                type: string
+              ohrmID:
+                type: string
+              firstName:
+                type: string
+              lastName:
+                type: string
+              jobTitle:
+                type: string
       responses:
         '200':
           description: OK
@@ -149,6 +168,8 @@ paths:
           description: Internal Server Error
     put:
       description: 'Update an evaluation record by salesman ID and year'
+      consumes:
+        - application/json
       parameters:
         - name: id
           in: path
@@ -158,6 +179,29 @@ paths:
           in: path
           required: true
           type: string
+        - name: salesman
+          in: body
+          schema:
+            type: object
+            required:
+              - userName
+            properties:
+              sid:
+                type: string
+              year:
+                type: string
+              orderEval:
+                type: string
+              socialEval:
+                type: string
+              orderBonus:
+                type: string
+              socialBonus:
+                type: string
+              totalBonus:
+                type: string
+              remarks:
+                type: string
       responses:
         '200':
           description: OK

@@ -1,29 +1,64 @@
-import { Component, OnInit } from '@angular/core';
-import {ExampleDatapoint} from '../../interfaces/example-datapoint';
-import {PeopleDemoService} from '../../services/people-demo.service';
+import { Component, OnInit} from '@angular/core';
+import {SelectionModel} from '@angular/cdk/collections';
+import {salesman} from '../../interfaces/salesman-interface';
+import {ApiService} from '../../api/services/api.service';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {SalesmanUpdateDialogComponent} from '../../components/salesman-update-dialog/salesman-update-dialog.component';
 
 @Component({
-    selector: 'app-salesmen-page',
+    selector: 'app-salesman-page',
     templateUrl: './salesmen-page.component.html',
     styleUrls: ['./salesmen-page.component.css']
 })
+
 export class SalesmenPageComponent implements OnInit {
 
-    displayedColumns = ['id', 'name', 'color'];
-    people: ExampleDatapoint[] = [];
+    displayedColumns = ['select', 'id', 'name', 'jobTitle'];
+    salesmen: salesman[] = [];
 
-    constructor(private peopleDemoService: PeopleDemoService) { }
+    constructor(private apiService: ApiService, private dialog: MatDialog) { }
 
     ngOnInit(): void {
-        this.fetchPeople();
+        this.fetchSalesmen();
     }
 
-    fetchPeople(): void{
-        this.peopleDemoService.getPeople().subscribe((response): void => {
+    selection = new SelectionModel<salesman>(false, []);
+
+    fetchSalesmen(): void{
+        this.apiService.apiSalesmenGet$Response().subscribe((response): void => {
             if (response.status === 200){
-                this.people = response.body;
+                this.salesmen = response.body;
             }
         });
     }
 
+    addSalesman(): void{
+        this.apiService.apiSalesmenPost$Response().subscribe((response): void => {
+            if (response.status === 200){
+                this.fetchSalesmen();
+            }
+        });
+    }
+
+    deleteSalesman(): void {
+        // eslint-disable-next-line no-underscore-dangle
+        this.apiService.apiSalesmenIdDelete$Response(this.selection.selected[0]._id).subscribe((response): void => {
+            if (response.status === 200) {
+                this.fetchSalesmen();
+            }
+        });
+    }
+
+    openDialog(): void {
+        const dialogConfig = new MatDialogConfig();
+
+        dialogConfig.disableClose = true;
+        dialogConfig.autoFocus = true;
+        // eslint-disable-next-line no-underscore-dangle
+        dialogConfig.data = this.selection.selected[0]._id;
+
+        this.dialog.open(SalesmanUpdateDialogComponent, dialogConfig).beforeClosed().subscribe((): void => {
+            this.fetchSalesmen();
+        });
+    }
 }

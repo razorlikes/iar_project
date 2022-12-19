@@ -5,7 +5,7 @@
         <mat-label>Employee ID</mat-label>
         <input matInput #first>
     </mat-form-field>
-    <button mat-raised-button>Search</button>
+    <button mat-raised-button (click)="fetchPeople()">Search</button>
 </form>
 
 <table mat-table class="mat-elevation-z8 cdk-table" style="margin:20px; width:514px" [dataSource]="people">
