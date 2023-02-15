@@ -1,4 +1,4 @@
-export interface salesman{
+export interface salesman {
     _id: string;
 
     sid: string;

@@ -1,35 +1,45 @@
-<h1>Salesmen</h1>
+<h1>Employees</h1>
 
-<table mat-table class="mat-elevation-z8 cdk-table" style="margin:20px; width:514px" [dataSource]="salesmen">
+<table [dataSource]="salesmen" class="mat-elevation-z8 cdk-table" mat-table style="margin:20px; width:514px">
     <ng-container matColumnDef="select">
-        <th mat-header-cell *matHeaderCellDef>
+        <th *matHeaderCellDef mat-header-cell>
         </th>
-        <td mat-cell *matCellDef="let row">
-            <mat-radio-button (click)="$event.stopPropagation()"
-                              (change)="$event ? selection.toggle(row) : null"
+        <td *matCellDef="let row" mat-cell>
+            <mat-radio-button (change)="$event ? selection.toggle(row) : null"
+                              (click)="$event.stopPropagation()"
                               [checked]="selection.isSelected(row)">
             </mat-radio-button>
         </td>
     </ng-container>
 
     <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>Employee ID</th>
-        <td mat-cell *matCellDef="let salesman">{{salesman.sid}}</td>
+        <th *matHeaderCellDef mat-header-cell>Employee ID</th>
+        <td *matCellDef="let salesman" mat-cell>{{salesman.sid}}</td>
     </ng-container>
     <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td mat-cell *matCellDef="let salesman">{{salesman.firstName}} {{salesman.lastName}}</td>
+        <th *matHeaderCellDef mat-header-cell>Name</th>
+        <td *matCellDef="let salesman" mat-cell>{{salesman.firstName}} {{salesman.lastName}}</td>
     </ng-container>
     <ng-container matColumnDef="jobTitle">
-        <th mat-header-cell *matHeaderCellDef>Job Title</th>
-        <td mat-cell *matCellDef="let salesman">{{salesman.jobTitle}}</td>
+        <th *matHeaderCellDef mat-header-cell>Job Title</th>
+        <td *matCellDef="let salesman" mat-cell>{{salesman.jobTitle}}</td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
 
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <tr *matRowDef="let row; columns: displayedColumns" mat-row></tr>
 </table>
 
-<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px" (click)="addSalesman()">Add Salesman</button>
-<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px" (click)="deleteSalesman()">Delete Salesman</button>
-<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px" (click)="openDialog()">Update Salesman</button>
+<button (click)="addSalesman()" class="menu-button" color="primary" mat-flat-button style="margin:20px; width:145px">Add
+    Employee
+</button>
+<button (click)="deleteSalesman()" class="menu-button" color="primary" mat-flat-button style="margin:20px; width:145px">
+    Delete Employee
+</button>
+<button (click)="openDialog()" class="menu-button" color="primary" mat-flat-button style="margin:20px; width:145px">
+    Update Employee
+</button>
+<br>
+<button (click)="getSalesmen()" class="menu-button" color="warn" mat-flat-button style="margin:20px; width:200px;">Fetch
+    from OrangeHRM
+</button>

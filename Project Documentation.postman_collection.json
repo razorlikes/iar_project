@@ -1,0 +1,2994 @@
+{
+	"info": {
+		"_postman_id": "1a912bc1-5697-445a-8be6-b64e4c469f42",
+		"name": "Project Documentation",
+		"description": "API documentation for the semester project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24768392"
+	},
+	"item": [
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "/api/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "5$c3inw%",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{baseUrl}}/api/login"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": "{{baseUrl}}/api/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": "{{baseUrl}}/api/login"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/api/login"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/api/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "salesmen",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get a salesman by mongo ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/salesmen/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"salesmen",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Get a salesman by mongo ID"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/salesmen/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"salesmen",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/salesmen/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"salesmen",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete a salesman by mongo ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/salesmen/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"salesmen",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "non in culpa aliqua",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Delete a salesman by mongo ID"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/salesmen/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"salesmen",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/salesmen/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"salesmen",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Update a salesman by mongo ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"sid\": \"minim do in\",\n  \"ocrxID\": \"anim ea proident\",\n  \"ohrmID\": \"do aliquip\",\n  \"firstName\": \"veniam ipsum consequat in\",\n  \"lastName\": \"Lorem esse non i\",\n  \"jobTitle\": \"exercitation labore\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/salesmen/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"salesmen",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "non in culpa aliqua",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Update a salesman by mongo ID"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sid\": \"minim do in\",\n  \"ocrxID\": \"anim ea proident\",\n  \"ohrmID\": \"do aliquip\",\n  \"firstName\": \"veniam ipsum consequat in\",\n  \"lastName\": \"Lorem esse non i\",\n  \"jobTitle\": \"exercitation labore\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/salesmen/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"salesmen",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sid\": \"minim do in\",\n  \"ocrxID\": \"anim ea proident\",\n  \"ohrmID\": \"do aliquip\",\n  \"firstName\": \"veniam ipsum consequat in\",\n  \"lastName\": \"Lorem esse non i\",\n  \"jobTitle\": \"exercitation labore\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/salesmen/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"salesmen",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Add a new salesman",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"sid\": \"1\",\n  \"ocrxID\": \"2\",\n  \"ohrmID\": \"3\",\n  \"firstName\": \"4\",\n  \"lastName\": \"5\",\n  \"jobTitle\": \"6\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/salesmen",
+								"description": "Add a new salesman"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"sid\": \"minim do in\",\n  \"ocrxID\": \"anim ea proident\",\n  \"ohrmID\": \"do aliquip\",\n  \"firstName\": \"veniam ipsum consequat in\",\n  \"lastName\": \"Lorem esse non i\",\n  \"jobTitle\": \"exercitation labore\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/salesmen"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"sid\": \"minim do in\",\n  \"ocrxID\": \"anim ea proident\",\n  \"ohrmID\": \"do aliquip\",\n  \"firstName\": \"veniam ipsum consequat in\",\n  \"lastName\": \"Lorem esse non i\",\n  \"jobTitle\": \"exercitation labore\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/salesmen"
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "List all salesmen",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status test\", function () {\r",
+											"    pm.response.to.have.jsonBody({\r",
+											"  \"sid\": \"1\",\r",
+											"  \"ocrxID\": \"2\",\r",
+											"  \"ohrmID\": \"3\",\r",
+											"  \"firstName\": \"4\",\r",
+											"  \"lastName\": \"5\",\r",
+											"  \"jobTitle\": \"6\"\r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/api/salesmen",
+								"description": "List all salesmen"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/salesmen"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/salesmen"
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete all salesmen",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{baseUrl}}/api/salesmen",
+								"description": "Delete all salesmen"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": "{{baseUrl}}/api/salesmen"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": "{{baseUrl}}/api/salesmen"
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "evaluationRecords",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get all evaluation records for an employee by SID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.be.jsonBody({\r",
+													"        \"sid\": \"1\"\r",
+													"    })\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/evaluationRecords/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"evaluationRecords",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Get an evaluation record by mongo ID"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/evaluationRecords/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"evaluationRecords",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/evaluationRecords/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"evaluationRecords",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Update an evaluation record by mongo ID and year",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"sid\": \"ad sunt fugiat anim nostrud\",\n  \"year\": \"aute et Excepteur nisi elit\",\n  \"orderBonus\": \"anim laborum magna ipsum\",\n  \"socialBonus\": \"mollit laborum sed cupida\",\n  \"totalBonus\": \"quis et\",\n  \"remarks\": \"in \"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/evaluationRecords/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"evaluationRecords",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "non in culpa aliqua",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Update an evaluation record by mongo ID and year"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sid\": \"ad sunt fugiat anim nostrud\",\n  \"year\": \"aute et Excepteur nisi elit\",\n  \"orderBonus\": \"anim laborum magna ipsum\",\n  \"socialBonus\": \"mollit laborum sed cupida\",\n  \"totalBonus\": \"quis et\",\n  \"remarks\": \"in \"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/evaluationRecords/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"evaluationRecords",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sid\": \"ad sunt fugiat anim nostrud\",\n  \"year\": \"aute et Excepteur nisi elit\",\n  \"orderBonus\": \"anim laborum magna ipsum\",\n  \"socialBonus\": \"mollit laborum sed cupida\",\n  \"totalBonus\": \"quis et\",\n  \"remarks\": \"in \"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/evaluationRecords/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"evaluationRecords",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete an evaluation record by mongo ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/evaluationRecords/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"evaluationRecords",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "non in culpa aliqua",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Delete an evaluation record by mongo ID"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/evaluationRecords/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"evaluationRecords",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/evaluationRecords/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"evaluationRecords",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Add a new evaluation record",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"sid\": \"1\",\n  \"year\": \"2\",\n  \"orderBonus\": \"3\",\n  \"socialBonus\": \"4\",\n  \"totalBonus\": \"5\",\n  \"remarks\": \"6\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/evaluationRecords",
+								"description": "Add a new evaluation record"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"sid\": \"tempor irure\",\n  \"year\": \"tempor\",\n  \"orderBonus\": \"mollit eu enim\",\n  \"socialBonus\": \"mollit dolor laboris voluptate laborum\",\n  \"totalBonus\": \"minim laborum\",\n  \"remarks\": \"in tempor velit ipsum exercitation\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/evaluationRecords"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"sid\": \"tempor irure\",\n  \"year\": \"tempor\",\n  \"orderBonus\": \"mollit eu enim\",\n  \"socialBonus\": \"mollit dolor laboris voluptate laborum\",\n  \"totalBonus\": \"minim laborum\",\n  \"remarks\": \"in tempor velit ipsum exercitation\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/evaluationRecords"
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "List all evaluation records",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status test\", function () {\r",
+											"    pm.response.to.have.jsonBody({\r",
+											"  \"sid\": \"1\",\r",
+											"})\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/api/evaluationRecords",
+								"description": "List all evaluation records"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/evaluationRecords"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/evaluationRecords"
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "ocrx",
+					"item": [
+						{
+							"name": "customers",
+							"item": [
+								{
+									"name": "Retrieve all customer from OpenCRX",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.be.jsonBody([\r",
+													"    {\r",
+													"        \"id\": \"97NB4O91UQORTH2MA4T2TYJFL\",\r",
+													"        \"fullName\": \"Telekom AG\",\r",
+													"        \"customerRating\": 1\r",
+													"    },\r",
+													"    {\r",
+													"        \"id\": \"9DXSJ5D62FBHLH2MA4T2TYJFL\",\r",
+													"        \"fullName\": \"Germania GmbH\",\r",
+													"        \"customerRating\": 3\r",
+													"    },\r",
+													"    {\r",
+													"        \"id\": \"9DXSJ6MJS0KX5H2MA4T2TYJFL\",\r",
+													"        \"fullName\": \"Dirk Müller GmbH\",\r",
+													"        \"customerRating\": 3\r",
+													"    },\r",
+													"    {\r",
+													"        \"id\": \"9K9OSN1V4YY95H2MA4T2TYJFL\",\r",
+													"        \"fullName\": \"Mayer Werft AG\",\r",
+													"        \"customerRating\": 2\r",
+													"    }\r",
+													"])\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/ocrx/customers",
+										"description": "Retrieve all customer from OpenCRX"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/ocrx/customers"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/ocrx/customers"
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Retrieve a customer by ID from OpenCRX",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.be.jsonBody(\r",
+													"    {\r",
+													"    \"id\": \"97NB4O91UQORTH2MA4T2TYJFL\",\r",
+													"    \"fullName\": \"Telekom AG\",\r",
+													"    \"customerRating\": 1\r",
+													"    })\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/ocrx/customers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ocrx",
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "97NB4O91UQORTH2MA4T2TYJFL",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Retrieve a customer by ID from OpenCRX"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/ocrx/customers/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ocrx",
+														"customers",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/ocrx/customers/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ocrx",
+														"customers",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "orders",
+							"item": [
+								{
+									"name": "Retrieve all orders from OpenCRX",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.be.jsonBody([\r",
+													"    {\r",
+													"        \"salesOrderId\": \"9DTSXR06DLHPM0EBHQA5MAZ7J\",\r",
+													"        \"salesRep\": \"L0NTAXG7TQTPM0EBHQA5MAZ7J\",\r",
+													"        \"totalAmount\": \"5500.000000000\",\r",
+													"        \"totalAmountIncludingTax\": \"5967.500000000\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"salesOrderId\": \"9DXSKIH1RCHD5H2MA4T2TYJFL\",\r",
+													"        \"salesRep\": \"9ENFSDRCBESBTH2MA4T2TYJFL\",\r",
+													"        \"totalAmount\": \"2500.000000000\",\r",
+													"        \"totalAmountIncludingTax\": \"2712.500000000\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"salesOrderId\": \"9DXSKMWV9GXD5H2MA4T2TYJFL\",\r",
+													"        \"salesRep\": \"9ENFSDRCBESBTH2MA4T2TYJFL\",\r",
+													"        \"totalAmount\": \"5625.000000000\",\r",
+													"        \"totalAmountIncludingTax\": \"6103.125000000\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"salesOrderId\": \"9ENGNFGDLDQSPH2MA4T2TYJFL\",\r",
+													"        \"salesRep\": \"9ENFSDRCBESBTH2MA4T2TYJFL\",\r",
+													"        \"totalAmount\": \"4000.000000000\",\r",
+													"        \"totalAmountIncludingTax\": \"4340.000000000\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"salesOrderId\": \"9NWI6UYX6YGH87IGMO3WKDQ7W\",\r",
+													"        \"salesRep\": \"L0NTAXG7TQTPM0EBHQA5MAZ7J\",\r",
+													"        \"totalAmount\": \"5570.000000000\",\r",
+													"        \"totalAmountIncludingTax\": \"6043.450000000\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"salesOrderId\": \"9NWIA1QJWTCRW7IGMO3WKDQ7W\",\r",
+													"        \"salesRep\": \"9ENFSDRCBESBTH2MA4T2TYJFL\",\r",
+													"        \"totalAmount\": \"3740.000000000\",\r",
+													"        \"totalAmountIncludingTax\": \"4057.900000000\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"salesOrderId\": \"9RAGESCOPWMB0QBF040JB164I\",\r",
+													"        \"salesRep\": \"L0NTAXG7TQTPM0EBHQA5MAZ7J\",\r",
+													"        \"totalAmount\": \"0.000000000\",\r",
+													"        \"totalAmountIncludingTax\": \"0.000000000\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"salesOrderId\": \"L4M2BSFAM5GQ3VHF1K43FCO5O\",\r",
+													"        \"salesRep\": \"L0NTAXG7TQTPM0EBHQA5MAZ7J\",\r",
+													"        \"totalAmount\": \"0.000000000\",\r",
+													"        \"totalAmountIncludingTax\": \"0.000000000\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"salesOrderId\": \"L6K69EO6Y3ZS9H2MA4T2TYJFL\",\r",
+													"        \"salesRep\": \"L0NTAXG7TQTPM0EBHQA5MAZ7J\",\r",
+													"        \"totalAmount\": \"2200.000000000\",\r",
+													"        \"totalAmountIncludingTax\": \"2387.000000000\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"salesOrderId\": \"RPEPWOQDWB84S7IGMO3WKDQ7W\",\r",
+													"        \"salesRep\": \"L0NTAXG7TQTPM0EBHQA5MAZ7J\",\r",
+													"        \"totalAmount\": \"0.000000000\",\r",
+													"        \"totalAmountIncludingTax\": \"0.000000000\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"salesOrderId\": \"RPI8KYL4J2GA47IGMO3WKDQ7W\",\r",
+													"        \"salesRep\": \"RPEOV4QFHTP7W7IGMO3WKDQ7W\",\r",
+													"        \"totalAmount\": \"0.000000000\",\r",
+													"        \"totalAmountIncludingTax\": \"0.000000000\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"salesOrderId\": \"RPI8V9YPYA8Z07IGMO3WKDQ7W\",\r",
+													"        \"salesRep\": \"9ENFSDRCBESBTH2MA4T2TYJFL\",\r",
+													"        \"totalAmount\": \"8625.000000000\",\r",
+													"        \"totalAmountIncludingTax\": \"9358.125000000\"\r",
+													"    }\r",
+													"])\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/ocrx/orders",
+										"description": "Retrieve all orders from OpenCRX"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/ocrx/orders"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/ocrx/orders"
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Retrieve order positions by order ID from OpenCRX",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.be.jsonBody([\r",
+													"    {\r",
+													"        \"product\": \"9JMBMVTX2CSMHH2MA4T2TYJFL\",\r",
+													"        \"baseAmount\": \"2500.000000000000000000\",\r",
+													"        \"pricePerUnit\": \"250.000000000\",\r",
+													"        \"quantity\": \"10.000000000\",\r",
+													"        \"taxAmount\": \"212.500000000000000000000000000\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"product\": \"L6K68IE1QROBTH2MA4T2TYJFL\",\r",
+													"        \"baseAmount\": \"3000.000000000000000000\",\r",
+													"        \"pricePerUnit\": \"200.000000000\",\r",
+													"        \"quantity\": \"15.000000000\",\r",
+													"        \"taxAmount\": \"255.000000000000000000000000000\"\r",
+													"    }\r",
+													"])\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/ocrx/orders/:id/positions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ocrx",
+												"orders",
+												":id",
+												"positions"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "9DTSXR06DLHPM0EBHQA5MAZ7J",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Retrieve order positions by order ID from OpenCRX"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/ocrx/orders/:id/positions",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ocrx",
+														"orders",
+														":id",
+														"positions"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/ocrx/orders/:id/positions",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ocrx",
+														"orders",
+														":id",
+														"positions"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "salesmen",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "Retrieve a salesman by OpenCRX ID from OpenCRX",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status test\", function () {\r",
+															"    pm.response.to.be.jsonBody({\r",
+															"    \"firstName\": \"John\",\r",
+															"    \"lastName\": \"Smith\",\r",
+															"    \"jobTitle\": \"Senior Salesman\",\r",
+															"    \"governmentId\": 90123,\r",
+															"    \"organization\": \"SmartHoover Ltd.\",\r",
+															"    \"department\": \"Sales\"\r",
+															"})\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/ocrx/salesmen/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ocrx",
+														"salesmen",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "9ENFSDRCBESBTH2MA4T2TYJFL",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Retrieve a salesman by OpenCRX ID from OpenCRX"
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/ocrx/salesmen/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"ocrx",
+																"salesmen",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "non in culpa aliqua",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Internal Server Error",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/ocrx/salesmen/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"ocrx",
+																"salesmen",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "non in culpa aliqua",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Retrieve all orders of a salesman in a given year from OpenCRX",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status test\", function () {\r",
+															"    pm.response.to.be.jsonBody([\r",
+															"    {\r",
+															"        \"salesOrderId\": \"9DXSKIH1RCHD5H2MA4T2TYJFL\",\r",
+															"        \"totalAmount\": \"2500.000000000\",\r",
+															"        \"totalAmountIncludingTax\": \"2712.500000000\"\r",
+															"    },\r",
+															"    {\r",
+															"        \"salesOrderId\": \"9DXSKMWV9GXD5H2MA4T2TYJFL\",\r",
+															"        \"totalAmount\": \"5625.000000000\",\r",
+															"        \"totalAmountIncludingTax\": \"6103.125000000\"\r",
+															"    },\r",
+															"    {\r",
+															"        \"salesOrderId\": \"9ENGNFGDLDQSPH2MA4T2TYJFL\",\r",
+															"        \"totalAmount\": \"4000.000000000\",\r",
+															"        \"totalAmountIncludingTax\": \"4340.000000000\"\r",
+															"    }\r",
+															"])\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/ocrx/salesmen/:id/orders/:year",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ocrx",
+														"salesmen",
+														":id",
+														"orders",
+														":year"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "9ENFSDRCBESBTH2MA4T2TYJFL",
+															"description": "(Required) "
+														},
+														{
+															"key": "year",
+															"value": "2019",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Retrieve all orders of a salesman in a given year from OpenCRX"
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/ocrx/salesmen/:id/orders/:year",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"ocrx",
+																"salesmen",
+																":id",
+																"orders",
+																":year"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "non in culpa aliqua",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "year",
+																	"value": "non in culpa aliqua",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Internal Server Error",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/ocrx/salesmen/:id/orders/:year",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"ocrx",
+																"salesmen",
+																":id",
+																"orders",
+																":year"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "non in culpa aliqua",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "year",
+																	"value": "non in culpa aliqua",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Retrieve all salesmen from OpenCRX",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.be.jsonBody([\r",
+													"    {\r",
+													"        \"firstName\": \"John\",\r",
+													"        \"lastName\": \"Smith\",\r",
+													"        \"governmentId\": 90123,\r",
+													"        \"id\": \"9ENFSDRCBESBTH2MA4T2TYJFL\",\r",
+													"        \"jobTitle\": \"Senior Salesman\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"firstName\": \"Sascha\",\r",
+													"        \"lastName\": \"Alda\",\r",
+													"        \"id\": \"9EVAJAOUTHPT5H84KQGL5CLHT\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"firstName\": \"Paul\",\r",
+													"        \"lastName\": \"Kaye\",\r",
+													"        \"governmentId\": 90732,\r",
+													"        \"id\": \"9UO20Z7IE971OYYA85BI0VZO3\",\r",
+													"        \"jobTitle\": \"Senior Salesman\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"firstName\": \"Mary-Ann\",\r",
+													"        \"lastName\": \"Sallinger\",\r",
+													"        \"governmentId\": 90124,\r",
+													"        \"id\": \"L0NTAXG7TQTPM0EBHQA5MAZ7J\",\r",
+													"        \"jobTitle\": \"Senior Salesman\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"lastName\": \"Guest\",\r",
+													"        \"id\": \"NI7XwEIBEd29BeMf4vj8cA\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"firstName\": \"Kilian\",\r",
+													"        \"lastName\": \"Wilken\",\r",
+													"        \"id\": \"RC9375R5ALYW9H84KQGL5CLHT\",\r",
+													"        \"jobTitle\": \"Software-Engineer\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"firstName\": \"Max\",\r",
+													"        \"lastName\": \"Mustermann\",\r",
+													"        \"id\": \"RPEOV4QFHTP7W7IGMO3WKDQ7W\",\r",
+													"        \"jobTitle\": \"Sales\"\r",
+													"    },\r",
+													"    {\r",
+													"        \"lastName\": \"admin-Standard\",\r",
+													"        \"id\": \"admin-Standard\"\r",
+													"    }\r",
+													"])\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/ocrx/salesmen",
+										"description": "Retrieve all salesmen from OpenCRX"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/ocrx/salesmen"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/ocrx/salesmen"
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieve a product by ID from OpenCRX",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status test\", function () {\r",
+											"    pm.response.to.be.jsonBody({\r",
+											"    \"name\": \"HooverClean\"\r",
+											"})\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/ocrx/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ocrx",
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9JMBMVTX2CSMHH2MA4T2TYJFL",
+											"description": "(Required) test"
+										}
+									]
+								},
+								"description": "Retrieve a product by ID from OpenCRX"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/ocrx/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ocrx",
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "non in culpa aliqua",
+													"description": "(Required) test"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/ocrx/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ocrx",
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "non in culpa aliqua",
+													"description": "(Required) test"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "ohrm/salesmen",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Retrieve a salesman by OrangeHRM ID from OrangeHRM",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.be.jsonBody([\r",
+													"    {\r",
+													"        \"firstName\": \"Sascha\",\r",
+													"        \"middleName\": \"\",\r",
+													"        \"lastName\": \"Alda\",\r",
+													"        \"code\": \"98222\",\r",
+													"        \"employeeId\": \"3\",\r",
+													"        \"fullName\": \"Sascha Alda\",\r",
+													"        \"status\": null,\r",
+													"        \"dob\": null,\r",
+													"        \"driversLicenseNumber\": \"\",\r",
+													"        \"licenseExpiryDate\": null,\r",
+													"        \"maritalStatus\": null,\r",
+													"        \"gender\": null,\r",
+													"        \"otherId\": \"\",\r",
+													"        \"nationality\": null,\r",
+													"        \"unit\": \"IT\",\r",
+													"        \"jobTitle\": \"External Consultant\",\r",
+													"        \"supervisor\": null\r",
+													"    }\r",
+													"])\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/ohrm/salesmen/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ohrm",
+												"salesmen",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "98222",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Retrieve a salesman by OrangeHRM ID from OrangeHRM"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/ohrm/salesmen/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ohrm",
+														"salesmen",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/ohrm/salesmen/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ohrm",
+														"salesmen",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Add a bonus for one salesman by OrangeHRM ID in OrangeHRM",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status test\", function () {\r",
+													"    pm.response.to.be.jsonBody({\r",
+													"    \"error\": {\r",
+													"        \"status\": \"202\",\r",
+													"        \"text\": \"No Matching Employee For Given ID Found\"\r",
+													"    }\r",
+													"})\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/ohrm/salesmen/:id?year=2000&bonus=100",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ohrm",
+												"salesmen",
+												":id"
+											],
+											"query": [
+												{
+													"key": "year",
+													"value": "2000",
+													"description": "(Required) "
+												},
+												{
+													"key": "bonus",
+													"value": "100",
+													"description": "(Required) "
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "123456",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Add a bonus for one salesman by OrangeHRM ID in OrangeHRM"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/ohrm/salesmen/:id?year=non in culpa aliqua&bonus=non in culpa aliqua",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ohrm",
+														"salesmen",
+														":id"
+													],
+													"query": [
+														{
+															"key": "year",
+															"value": "non in culpa aliqua"
+														},
+														{
+															"key": "bonus",
+															"value": "non in culpa aliqua"
+														}
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/ohrm/salesmen/:id?year=non in culpa aliqua&bonus=non in culpa aliqua",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ohrm",
+														"salesmen",
+														":id"
+													],
+													"query": [
+														{
+															"key": "year",
+															"value": "non in culpa aliqua"
+														},
+														{
+															"key": "bonus",
+															"value": "non in culpa aliqua"
+														}
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "non in culpa aliqua",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieve all salesmen from OrangeHRM",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status test\", function () {\r",
+											"    pm.response.to.be.jsonBody([\r",
+											"    {\r",
+											"        \"firstName\": \"Sascha\",\r",
+											"        \"lastName\": \"Alda\",\r",
+											"        \"sid\": \"98222\",\r",
+											"        \"ohrmId\": \"3\",\r",
+											"        \"jobTitle\": \"External Consultant\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"firstName\": \"Chantal\",\r",
+											"        \"lastName\": \"Banks\",\r",
+											"        \"sid\": \"90133\",\r",
+											"        \"ohrmId\": \"5\",\r",
+											"        \"jobTitle\": \"HR Senior Consultant\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"firstName\": \"John\",\r",
+											"        \"lastName\": \"Doe\",\r",
+											"        \"sid\": \"91338\",\r",
+											"        \"ohrmId\": \"85\",\r",
+											"        \"jobTitle\": \"Sales\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"firstName\": \"Tom\",\r",
+											"        \"lastName\": \"Foster\",\r",
+											"        \"sid\": \"91333\",\r",
+											"        \"ohrmId\": \"6\",\r",
+											"        \"jobTitle\": \"IT-admin\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"firstName\": \"Paul\",\r",
+											"        \"lastName\": \"Kaye\",\r",
+											"        \"sid\": \"90732\",\r",
+											"        \"ohrmId\": \"31\",\r",
+											"        \"jobTitle\": \"Senior Salesman\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"firstName\": \"Michael\",\r",
+											"        \"lastName\": \"Moore\",\r",
+											"        \"sid\": \"98777\",\r",
+											"        \"ohrmId\": \"7\",\r",
+											"        \"jobTitle\": \"CEO\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"firstName\": \"Max\",\r",
+											"        \"lastName\": \"Mustermann\",\r",
+											"        \"sid\": \"1234\",\r",
+											"        \"ohrmId\": \"93\",\r",
+											"        \"jobTitle\": \"Senior Salesman\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"firstName\": \"Mary-Ann\",\r",
+											"        \"lastName\": \"Sallinger\",\r",
+											"        \"sid\": \"90124\",\r",
+											"        \"ohrmId\": \"9\",\r",
+											"        \"jobTitle\": \"Senior Salesman\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"firstName\": \"John\",\r",
+											"        \"lastName\": \"Smith\",\r",
+											"        \"sid\": \"90123\",\r",
+											"        \"ohrmId\": \"2\",\r",
+											"        \"jobTitle\": \"Senior Salesman\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"firstName\": \"Toni\",\r",
+											"        \"lastName\": \"Tomato\",\r",
+											"        \"sid\": \"91337\",\r",
+											"        \"ohrmId\": \"84\",\r",
+											"        \"jobTitle\": \"Sales\"\r",
+											"    }\r",
+											"])\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/api/ohrm/salesmen",
+								"description": "Retrieve all salesmen from OrangeHRM"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/ohrm/salesmen"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/ohrm/salesmen"
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/api/user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/api/user"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/api/user"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/api/user"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/people",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/api/people"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/api/people"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/api/people"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/api/people"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/api/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{baseUrl}}/api/login"
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/api/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/api/login"
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

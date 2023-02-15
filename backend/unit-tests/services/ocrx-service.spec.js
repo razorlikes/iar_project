@@ -16,7 +16,7 @@ describe("Testing OpenCRX Service", () => {
             }
         });
 
-        expect(await service.getProductById({id: 1})).to.eqls({"name":"Cool Product Name"});
+        expect(await service.getProductById({id: 1})).to.eqls({"name": "Cool Product Name"});
     });
 
     it("should return company info", async () => {
@@ -28,7 +28,11 @@ describe("Testing OpenCRX Service", () => {
             }
         });
 
-        expect(await service.getCustomerById({id: 1})).to.eqls({"id":"USERIDHERE","fullName":"Cool Company Name","customerRating":9001});
+        expect(await service.getCustomerById({id: 1})).to.eqls({
+            "id": "USERIDHERE",
+            "fullName": "Cool Company Name",
+            "customerRating": 9001
+        });
     });
 })
 

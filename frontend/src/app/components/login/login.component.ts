@@ -16,7 +16,8 @@ export class LoginComponent implements OnInit {
 
     loginError: string;
 
-    constructor(private authService: AuthService, private router: Router) { }
+    constructor(private authService: AuthService, private router: Router) {
+    }
 
     ngOnInit(): void {
         this.resetCredentials();
@@ -25,12 +26,12 @@ export class LoginComponent implements OnInit {
     /**
      * handles login operation, by calling the authService
      */
-    performLogin(): void{
+    performLogin(): void {
         this.authService.login(this.credentials).subscribe((response): void => {
-            if (response.status === 200){ // if response status is 200, assume login was successful
+            if (response.status === 200) { // if response status is 200, assume login was successful
                 this.resetCredentials();
                 this.enterApplication();
-            }else{
+            } else {
                 this.loginError = response.body as string;
             }
         },
@@ -43,14 +44,14 @@ export class LoginComponent implements OnInit {
     /**
      * resets login form
      */
-    resetCredentials(): void{
+    resetCredentials(): void {
         this.credentials = new Credentials('', '');
     }
 
     /**
      * redirects to the landing page
      */
-    enterApplication(): void{
+    enterApplication(): void {
         void this.router.navigate(['']);
     }
 }

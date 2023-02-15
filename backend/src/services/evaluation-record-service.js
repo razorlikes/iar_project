@@ -1,23 +1,36 @@
-exports.createRecord = async function(db, body) {
+const {ObjectId} = require("mongodb");
+exports.createRecord = async function (db, req) {
+    let body = {sid: req.body.sid};
     await db.collection('EvaluationRecords').insertOne(body)
 }
 
-exports.getRecords = async function(db) {
-    return db.collection('EvaluationRecords').find().toArray();
+exports.getRecords = async function (db) {
+    return await db.collection('EvaluationRecords').find().toArray();
 }
 
-exports.getRecordByIdAndYear = async function(db, params) {
-    let filter = {sid: parseInt(params.id), year: parseInt(params.year)}
-    return db.collection('EvaluationRecords').findOne(filter);
+exports.getRecordsById = async function (db, req) {
+    let filter = {sid: req.params.id}
+    return await db.collection('EvaluationRecords').find(filter).toArray();
 }
 
-exports.updateRecord = async function(db, params, body) {
-    let filter = {sid: parseInt(params.id), year: parseInt(params.year)}
-    let updatedRecord = {$set: body};
-    await db.collection('EvaluationRecords').updateOne(filter, updatedRecord)
+exports.updateRecord = async function (db, req) {
+    let filter = {_id: ObjectId(req.params.id)};
+    let updatedBody = {
+        $set: {
+            sid: req.body.sid,
+            year: req.body.year,
+            orderEval: req.body.orderEval,
+            socialEval: req.body.socialEval,
+            orderBonus: req.body.orderBonus,
+            socialBonus: req.body.socialBonus,
+            totalBonus: req.body.totalBonus,
+            remarks: req.body.remarks
+        }
+    };
+    await db.collection('EvaluationRecords').updateOne(filter, updatedBody)
 }
 
-exports.deleteRecord = async function(db, params) {
-    let filter = {sid: parseInt(params.id), year: parseInt(params.year)};
-    db.collection('EvaluationRecords').deleteOne(filter);
+exports.deleteRecord = async function (db, req) {
+    let filter = {_id: ObjectId(req.params.id)};
+    await db.collection('EvaluationRecords').deleteOne(filter);
 }

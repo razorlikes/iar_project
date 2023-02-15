@@ -1,4 +1,4 @@
-class Salesman{
+class Salesman {
     constructor(body) {
         this._id = undefined;
 

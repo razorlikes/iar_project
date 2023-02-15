@@ -1,6 +1,6 @@
 const ocrxService = require("../services/ocrx-service");
 
-exports.getProductById = function(req,res) {
+exports.getProductById = function (req, res) {
     ocrxService.getProductById(req.params).then(product => {
         res.send(product);
     }).catch(_ => {
@@ -18,7 +18,7 @@ exports.getAllCustomers = function (req, res) {
     })
 }
 
-exports.getCustomerById = function (req,res) {
+exports.getCustomerById = function (req, res) {
     ocrxService.getCustomerById(req.params).then(customer => {
         res.send(customer);
     }).catch(_ => {
@@ -36,7 +36,7 @@ exports.getAllOrders = function (req, res) {
     })
 }
 
-exports.getSalesPositions = function (req,res) {
+exports.getSalesPositions = function (req, res) {
     ocrxService.getSalePositions(req.params).then(salesPositions => {
         res.send(salesPositions);
     }).catch(_ => {

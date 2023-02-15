@@ -16,11 +16,12 @@ export class SalesmanUpdateDialogComponent implements OnInit {
         private apiService: ApiService,
         private dialogRef: MatDialogRef<SalesmanUpdateDialogComponent>,
         @Inject(MAT_DIALOG_DATA) public data: string
-    ) { }
+    ) {
+    }
 
     ngOnInit(): void {
-        this.apiService.apiSalesmenIdGet$Response(this.data).subscribe((response): void => {
-            if (response.status === 200){
+        this.apiService.apiSalesmenIdGet(this.data).subscribe((response): void => {
+            if (response.status === 200) {
                 this.salesman = response.body;
             }
         });
@@ -32,8 +33,8 @@ export class SalesmanUpdateDialogComponent implements OnInit {
 
     save(): void {
         // eslint-disable-next-line no-underscore-dangle
-        this.apiService.apiSalesmenIdPut$Response(this.salesman._id, this.salesman).subscribe((response): void => {
-            if (response.status === 200){
+        this.apiService.apiSalesmenIdPut(this.salesman._id, this.salesman).subscribe((response): void => {
+            if (response.status === 200) {
                 this.dialogRef.close();
             }
         });

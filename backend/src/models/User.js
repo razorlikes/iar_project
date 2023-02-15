@@ -7,7 +7,7 @@
  * @param {string} password
  * @param {boolean} isAdmin
  */
-class User{
+class User {
     constructor(username, firstname, lastname, email, password, isAdmin) {
         this._id = undefined;
         this.username = username;

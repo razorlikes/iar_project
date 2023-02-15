@@ -1,30 +1,30 @@
-<h2>Update Salesman</h2>
+<h2>Update Employee</h2>
 
 <mat-dialog-content>
-    <mat-form-field appearance="fill" style="margin:20px" >
+    <mat-form-field appearance="fill" style="margin:20px">
         <mat-label>First Name</mat-label>
-        <input matInput [(ngModel)]="salesman.firstName">
+        <input [(ngModel)]="salesman.firstName" matInput>
     </mat-form-field>
 
     <mat-form-field appearance="fill" style="margin:20px">
         <mat-label>Last Name</mat-label>
-        <input matInput [(ngModel)]="salesman.lastName">
+        <input [(ngModel)]="salesman.lastName" matInput>
     </mat-form-field>
-<div>
-    <mat-form-field appearance="fill" style="margin:20px">
-        <mat-label>Employee ID</mat-label>
-        <input matInput [(ngModel)]="salesman.sid">
-    </mat-form-field>
+    <div>
+        <mat-form-field appearance="fill" style="margin:20px">
+            <mat-label>Employee ID</mat-label>
+            <input [(ngModel)]="salesman.sid" matInput>
+        </mat-form-field>
 
-    <mat-form-field appearance="fill" style="margin:20px">
-        <mat-label>Job title</mat-label>
-        <input matInput [(ngModel)]="salesman.jobTitle">
-    </mat-form-field>
-</div>
+        <mat-form-field appearance="fill" style="margin:20px">
+            <mat-label>Job title</mat-label>
+            <input [(ngModel)]="salesman.jobTitle" matInput>
+        </mat-form-field>
+    </div>
 
 </mat-dialog-content>
 
 <mat-dialog-actions>
-    <button style="margin:20px" class="mat-raised-button" (click)="close()">Close</button>
-    <button style="margin:20px" class="mat-raised-button mat-primary" (click)="save()">Save</button>
+    <button (click)="close()" class="mat-raised-button" style="margin-right: 20px;">Close</button>
+    <button (click)="save()" class="mat-raised-button mat-primary" style="margin-right: 20px;">Save</button>
 </mat-dialog-actions>

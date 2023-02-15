@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {User} from '../../models/User';
@@ -16,11 +16,9 @@ export class MenuBarComponent implements OnInit {
     /*
     This array holds the definition of the menu's buttons.
    */
-    buttons = [
-        {title: 'Dashboard', routerLink: ''}, // the tile is the text on the button, the routerLink specifies, where it will navigate
-        {title: 'Salesmen', routerLink: 'salesmen'},
+    buttons = [ // the tile is the text on the button, the routerLink specifies, where it will navigate
+        {title: 'Employees', routerLink: 'salesmen'},
         {title: 'Evaluation Records', routerLink: 'records'},
-        {title: 'My Evaluation Records', routerLink: 'myrecords'},
     ];
 
     /**
@@ -30,7 +28,8 @@ export class MenuBarComponent implements OnInit {
      * @param router
      * @param userService
      */
-    constructor(private authService: AuthService, private router: Router, private userService: UserService) { }
+    constructor(private authService: AuthService, private router: Router, private userService: UserService) {
+    }
 
     ngOnInit(): void {
         this.fetchUser();
@@ -39,7 +38,7 @@ export class MenuBarComponent implements OnInit {
     /**
      * function which handles clicking the logout button
      */
-    handleLogout(): void{
+    handleLogout(): void {
         this.authService.logout().subscribe();
         void this.router.navigate(['login']); // after logout go back to the login-page
     }
@@ -47,7 +46,7 @@ export class MenuBarComponent implements OnInit {
     /**
      * fetches information about logged-in user
      */
-    fetchUser(): void{
+    fetchUser(): void {
         this.userService.getOwnUser().subscribe((user): void => {
             this.user = user;
         });

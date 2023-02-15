@@ -1,44 +1,73 @@
 <h1>Evaluation Records</h1>
+<div class="container" style="display: flex;">
+    <div style="width: 360px;">
+        <form (submit)="$event.preventDefault()">
+            <mat-form-field appearance="fill" style="margin:20px">
+                <mat-label>Employee ID</mat-label>
+                <input [(ngModel)]="inputVal" matInput required>
+                <mat-hint>Required field!</mat-hint>
+            </mat-form-field>
+            <button (click)="fetchRecords()" mat-raised-button>Search</button>
+        </form>
+    </div>
 
-<form (submit)="$event.preventDefault()">
-    <mat-form-field appearance="fill" style="margin:20px">
-        <mat-label>Employee ID</mat-label>
-        <input matInput #first>
-    </mat-form-field>
-    <button mat-raised-button (click)="fetchPeople()">Search</button>
-</form>
+    <div *ngIf="salesman !== undefined" style="flex-grow: 1; margin-top: 5px;">
+        <h2 style="margin-bottom: 2px;">Employee:</h2>
+        <b>Name: </b>{{salesman.firstName}} {{salesman.lastName}}<br>
+        <b>Job Title: </b>{{salesman.jobTitle}}<br>
+    </div>
+</div>
 
-<table mat-table class="mat-elevation-z8 cdk-table" style="margin:20px; width:514px" [dataSource]="people">
-    <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>Year</th>
-        <td mat-cell *matCellDef="let person">{{person.age}}</td>
-    </ng-container>
+<div *ngIf="salesman !== undefined">
+    <table [dataSource]="records" class="mat-elevation-z8 cdk-table" mat-table style="margin:20px; width:514px">
+        <ng-container matColumnDef="select">
+            <th *matHeaderCellDef mat-header-cell>
+            </th>
+            <td *matCellDef="let row" mat-cell>
+                <mat-radio-button (change)="$event ? selection.toggle(row) : null"
+                                  (click)="$event.stopPropagation()"
+                                  [checked]="selection.isSelected(row)">
+                </mat-radio-button>
+            </td>
+        </ng-container>
 
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Sale Bonus</th>
-        <td mat-cell *matCellDef="let person">{{person.age}}</td>
-    </ng-container>
+        <ng-container matColumnDef="year">
+            <th *matHeaderCellDef mat-header-cell>Year</th>
+            <td *matCellDef="let record" mat-cell>{{record.year}}</td>
+        </ng-container>
+        <ng-container matColumnDef="saleb">
+            <th *matHeaderCellDef mat-header-cell>Sale Bonus</th>
+            <td *matCellDef="let record" mat-cell>{{record.orderBonus}}€</td>
+        </ng-container>
+        <ng-container matColumnDef="socialb">
+            <th *matHeaderCellDef mat-header-cell>Social Bonus</th>
+            <td *matCellDef="let record" mat-cell>{{record.socialBonus}}€</td>
+        </ng-container>
+        <ng-container matColumnDef="totalb">
+            <th *matHeaderCellDef mat-header-cell>Total Bonus</th>
+            <td *matCellDef="let record" mat-cell>{{record.totalBonus}}€</td>
+        </ng-container>
+        <ng-container matColumnDef="remarks">
+            <th *matHeaderCellDef mat-header-cell>Remarks</th>
+            <td *matCellDef="let record" mat-cell>{{record.remarks}}</td>
+        </ng-container>
 
-    <ng-container matColumnDef="color">
-        <th mat-header-cell *matHeaderCellDef>Social Bonus</th>
-        <td mat-cell *matCellDef="let person">{{person.age}}</td>
-    </ng-container>
+        <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
 
-    <ng-container matColumnDef="age">
-        <th mat-header-cell *matHeaderCellDef>Total Bonus</th>
-        <td mat-cell *matCellDef="let person" >{{person.age}}</td>
-    </ng-container>
+        <tr *matRowDef="let row; columns: displayedColumns" mat-row></tr>
+    </table>
 
-    <ng-container matColumnDef="remarks">
-        <th mat-header-cell *matHeaderCellDef>Remarks</th>
-        <td mat-cell *matCellDef="let person" >{{person.id}}</td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
-
-<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px">Add Record</button>
-<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px">Delete Record</button>
-<button class="menu-button" mat-flat-button color="primary" style="margin:20px; width:145px">Update Record</button>
+    <button (click)="addRecord()" class="menu-button" color="primary" mat-flat-button style="margin:20px; width:145px">
+        Add Record
+    </button>
+    <button (click)="deleteRecord()" class="menu-button" color="primary" mat-flat-button
+            style="margin:20px; width:145px">Delete Record
+    </button>
+    <button (click)="openDialog(this.selection.selected[0]._id)" class="menu-button" color="primary" mat-flat-button
+            style="margin:20px; width:145px">Update Record
+    </button>
+    <br>
+    <button (click)="pushToHrm()" class="menu-button" color="warn" mat-flat-button style="margin:20px; width:250px">Push
+        selected to OrangeHRM
+    </button>
+</div>

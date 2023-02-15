@@ -2,7 +2,7 @@ const environment = {
     production: false,
     port: 8080,
     defaultAdminPassword: '5$c3inw%',
-    db:{
+    db: {
         host: '127.0.0.1',
         port: 27017,
         username: '',
@@ -16,7 +16,7 @@ const environment = {
     ohrm: {
         baseURL: 'https://sepp-hrm.inf.h-brs.de/symfony/web/index.php',
         username: 'nieth',
-        password: 'Safb02da42Demo$',
+        password: '*Safb02da42Demo$',
     },
     ocrx: {
         baseURL: 'https://sepp-crm.inf.h-brs.de/opencrx-rest-CRX',

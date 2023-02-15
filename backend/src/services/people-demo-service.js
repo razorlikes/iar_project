@@ -1,4 +1,4 @@
-exports.getPeople = async function(){
+exports.getPeople = async function () {
     return [
         {
             id: 'zg6j7glicrg88pyy',
@@ -12,9 +12,9 @@ exports.getPeople = async function(){
         {
             id: 'wzarts0vlqq6m5hy',
             name: 'Amy',
-                favourite_color: {
+            favourite_color: {
                 name: 'Sea Blue',
-                    code: '#147fc6'
+                code: '#147fc6'
             },
             age: 17
         },

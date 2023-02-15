@@ -1,0 +1,687 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Project Documentation",
+    "description": "API documentation for the semester project",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/login": {
+      "post": {
+        "description": "",
+        "tags": [
+          "Provided by Template"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "tags": [
+          "Provided by Template"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "tags": [
+          "Provided by Template"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user": {
+      "get": {
+        "description": "",
+        "tags": [
+          "Provided by Template"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/people": {
+      "get": {
+        "description": "",
+        "tags": [
+          "Provided by Template"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/salesmen": {
+      "get": {
+        "description": "List all salesmen",
+        "tags": [
+          "Managing internal employee records"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete all salesmen",
+        "tags": [
+          "Managing internal employee records"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "Add a new salesman",
+        "tags": [
+          "Managing internal employee records"
+        ],
+        "parameters": [
+          {
+            "name": "salesman",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sid": {
+                  "type": "string"
+                },
+                "ocrxID": {
+                  "type": "string"
+                },
+                "ohrmID": {
+                  "type": "string"
+                },
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "jobTitle": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/salesmen/{id}": {
+      "get": {
+        "description": "Get a salesman by mongo ID",
+        "tags": [
+          "Managing internal employee records"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a salesman by mongo ID",
+        "tags": [
+          "Managing internal employee records"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "Update a salesman by mongo ID",
+        "tags": [
+          "Managing internal employee records"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "salesman",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sid": {
+                  "type": "string"
+                },
+                "ocrxID": {
+                  "type": "string"
+                },
+                "ohrmID": {
+                  "type": "string"
+                },
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "jobTitle": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/evaluationRecords": {
+      "get": {
+        "description": "List all evaluation records",
+        "tags": [
+          "Managing internal evaluation records"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "Add a new evaluation record",
+        "tags": [
+          "Managing internal evaluation records"
+        ],
+        "parameters": [
+          {
+            "name": "record",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "required": [
+                "sid"
+              ],
+              "properties": {
+                "sid": {
+                  "type": "string"
+                },
+                "year": {
+                  "type": "string"
+                },
+                "orderBonus": {
+                  "type": "string"
+                },
+                "socialBonus": {
+                  "type": "string"
+                },
+                "totalBonus": {
+                  "type": "string"
+                },
+                "remarks": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/evaluationRecords/{id}": {
+      "get": {
+        "description": "Get all evaluation records for an employee by SID",
+        "tags": [
+          "Managing internal evaluation records"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "Update an evaluation record by mongo ID and year",
+        "tags": [
+          "Managing internal evaluation records"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "record",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "required": [
+                "userName"
+              ],
+              "properties": {
+                "sid": {
+                  "type": "string"
+                },
+                "year": {
+                  "type": "string"
+                },
+                "orderBonus": {
+                  "type": "string"
+                },
+                "socialBonus": {
+                  "type": "string"
+                },
+                "totalBonus": {
+                  "type": "string"
+                },
+                "remarks": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete an evaluation record by mongo ID",
+        "tags": [
+          "Managing internal evaluation records"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/ocrx/products/{id}": {
+      "get": {
+        "description": "Retrieve a product by ID from OpenCRX",
+        "tags": [
+          "Interfacing with OpenCRX"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "test"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/ocrx/customers": {
+      "get": {
+        "description": "Retrieve all customer from OpenCRX",
+        "tags": [
+          "Interfacing with OpenCRX"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/ocrx/customers/{id}": {
+      "get": {
+        "description": "Retrieve a customer by ID from OpenCRX",
+        "tags": [
+          "Interfacing with OpenCRX"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/ocrx/orders": {
+      "get": {
+        "description": "Retrieve all orders from OpenCRX",
+        "tags": [
+          "Interfacing with OpenCRX"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/ocrx/orders/{id}/positions": {
+      "get": {
+        "description": "Retrieve order positions by order ID from OpenCRX",
+        "tags": [
+          "Interfacing with OpenCRX"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/ocrx/salesmen": {
+      "get": {
+        "description": "Retrieve all salesmen from OpenCRX",
+        "tags": [
+          "Interfacing with OpenCRX"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/ocrx/salesmen/{id}": {
+      "get": {
+        "description": "Retrieve a salesman by OpenCRX ID from OpenCRX",
+        "tags": [
+          "Interfacing with OpenCRX"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/ocrx/salesmen/{id}/orders/{year}": {
+      "get": {
+        "description": "Retrieve all orders of a salesman in a given year from OpenCRX",
+        "tags": [
+          "Interfacing with OpenCRX"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/ohrm/salesmen": {
+      "get": {
+        "description": "Retrieve all salesmen from OrangeHRM",
+        "tags": [
+          "Interfacing with OrangeHRM"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/ohrm/salesmen/{id}": {
+      "get": {
+        "description": "Retrieve a salesman by OrangeHRM ID from OrangeHRM",
+        "tags": [
+          "Interfacing with OrangeHRM"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "Add a bonus for one salesman by OrangeHRM ID in OrangeHRM",
+        "tags": [
+          "Interfacing with OrangeHRM"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "bonus",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}

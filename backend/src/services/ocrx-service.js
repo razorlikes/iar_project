@@ -20,14 +20,14 @@ const config = {
     auth: credentials,
 };
 
-exports.getProductById = async function(params) {
+exports.getProductById = async function (params) {
     const product = (await axios.get(`${baseURL}/org.opencrx.kernel.product1/provider/CRX/segment/Standard/product/${params.id}`, config)).data;
     return {
         name: product.name,
     };
 }
 
-exports.getAllCustomers = async function() {
+exports.getAllCustomers = async function () {
     const users = (await axios.get(`${baseURL}/org.opencrx.kernel.account1/provider/CRX/segment/Standard/account`, config)).data.objects;
     return users
         .filter(user => user['@type'] === 'org.opencrx.kernel.account1.LegalEntity')
@@ -40,16 +40,16 @@ exports.getAllCustomers = async function() {
         });
 }
 
-exports.getCustomerById = async function(params) {
+exports.getCustomerById = async function (params) {
     const user = (await axios.get(`${baseURL}/org.opencrx.kernel.account1/provider/CRX/segment/Standard/account/${params.id}`, config)).data;
-        return {
-            id: user['@href'].split('/').pop(),
-            fullName: user.name,
-            customerRating: user.accountRating
-        };
+    return {
+        id: user['@href'].split('/').pop(),
+        fullName: user.name,
+        customerRating: user.accountRating
+    };
 }
 
-exports.getAllOrders = async function() {
+exports.getAllOrders = async function () {
     const salesOrders = (await axios.get(`${baseURL}/org.opencrx.kernel.contract1/provider/CRX/segment/Standard/salesOrder`, config)).data.objects;
     return salesOrders
         .map(salesOrder => {
@@ -62,7 +62,7 @@ exports.getAllOrders = async function() {
         });
 }
 
-exports.getSalePositions = async function(params) {
+exports.getSalePositions = async function (params) {
     const positions = (await axios.get(`${baseURL}/org.opencrx.kernel.contract1/provider/CRX/segment/Standard/salesOrder/${params.id}/position`, config)).data.objects;
     return positions
         .map(position => {
@@ -76,7 +76,7 @@ exports.getSalePositions = async function(params) {
         });
 }
 
-exports.getSalesmanById = async function(params) {
+exports.getSalesmanById = async function (params) {
     const salesman = (await axios.get(`${baseURL}/org.opencrx.kernel.account1/provider/CRX/segment/Standard/account/${params.id}`, config)).data;
     return {
         firstName: salesman.firstName,
@@ -88,7 +88,7 @@ exports.getSalesmanById = async function(params) {
     };
 }
 
-exports.getAllSalesman = async function() {
+exports.getAllSalesman = async function () {
     const salesmen = (await axios.get(`${baseURL}/org.opencrx.kernel.account1/provider/CRX/segment/Standard/account/`, config)).data.objects;
     return salesmen
         .filter(salesman => salesman['@type'] === 'org.opencrx.kernel.account1.Contact')
@@ -103,7 +103,7 @@ exports.getAllSalesman = async function() {
         });
 }
 
-exports.getOrdersOfSalesman = async function(params) {
+exports.getOrdersOfSalesman = async function (params) {
     const sales = (await axios.get(`${baseURL}/org.opencrx.kernel.contract1/provider/CRX/segment/Standard/salesOrder`, config)).data.objects;
     return sales
         .filter(sale => sale.salesRep['@href'].endsWith(params.id))

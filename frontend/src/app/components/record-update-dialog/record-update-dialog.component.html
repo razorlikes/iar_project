@@ -1,0 +1,153 @@
+<mat-dialog-content *ngIf="salesman !== undefined">
+    <h2>Evaluation Record</h2>
+    <div class="container" style="display: flex;">
+        <div style="width: 200px;">
+            <h3 style="margin-bottom: 2px;"><b>Employee</b></h3>
+            <b>Name:</b> {{salesman.firstName}} {{salesman.lastName}}<br>
+            <b>Employee ID:</b> {{salesman.sid}}<br>
+            <b>Job title:</b> {{salesman.jobTitle}}<br>
+        </div>
+
+        <div *ngIf="salesman !== undefined" style="flex-grow: 1; margin-top: 5px;">
+            <mat-form-field appearance="fill" style="margin-top: 25px;">
+                <mat-label>Year of Performance</mat-label>
+                <input [(ngModel)]="record.year" matInput required>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <h3><b>Social Evaluation</b></h3>
+    <div class="container" style="display: flex;">
+        <div style="width: 110px; margin-right: 10px;">
+            <p>Leadership Competence</p><br>
+            <p>Openness to Employee</p><br>
+            <p>Social Behaviour to Employee</p><br>
+            <p>Attitude towards Client</p><br>
+            <p>Communication Skills</p><br>
+            <p>Integrity to Company</p><br>
+        </div>
+        <div>
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Target</mat-label>
+                <input [(ngModel)]="values[0][0]" matInput>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Target</mat-label>
+                <input [(ngModel)]="values[0][1]" matInput>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Target</mat-label>
+                <input [(ngModel)]="values[0][2]" matInput>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Target</mat-label>
+                <input [(ngModel)]="values[0][3]" matInput>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Target</mat-label>
+                <input [(ngModel)]="values[0][4]" matInput>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Target</mat-label>
+                <input [(ngModel)]="values[0][5]" matInput>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Actual</mat-label>
+                <input [(ngModel)]="values[1][0]" matInput>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Actual</mat-label>
+                <input [(ngModel)]="values[1][1]" matInput>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Actual</mat-label>
+                <input [(ngModel)]="values[1][2]" matInput>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Actual</mat-label>
+                <input [(ngModel)]="values[1][3]" matInput>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Actual</mat-label>
+                <input [(ngModel)]="values[1][4]" matInput>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Actual</mat-label>
+                <input [(ngModel)]="values[1][5]" matInput>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Bonus</mat-label>
+                <input [(ngModel)]="values[2][0]" matInput readonly>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Bonus</mat-label>
+                <input [(ngModel)]="values[2][1]" matInput readonly>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Bonus</mat-label>
+                <input [(ngModel)]="values[2][2]" matInput readonly>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Bonus</mat-label>
+                <input [(ngModel)]="values[2][3]" matInput readonly>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Bonus</mat-label>
+                <input [(ngModel)]="values[2][4]" matInput readonly>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill" style="margin-right: 5px; margin-bottom: 2px; width: 65px;">
+                <mat-label>Bonus</mat-label>
+                <input [(ngModel)]="values[2][5]" matInput readonly>
+            </mat-form-field>
+        </div>
+    </div>
+    <button (click)="calculate()" class="mat-raised-button">Calculate Bonus</button>
+    <mat-form-field appearance="fill" style="margin-left: 25px; margin-bottom: 2px; width: 100px;">
+        <mat-label>Total</mat-label>
+        <input [(ngModel)]="stotal" matInput readonly>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field style="width: 450px;">
+        <textarea [(ngModel)]="record.remarks" matInput placeholder="Remarks" rows="5"></textarea>
+    </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button (click)="close()" class="mat-raised-button" style="margin-right: 20px;">Close</button>
+    <button (click)="save()" class="mat-raised-button mat-primary" style="margin-right: 20px;">Save</button>
+</mat-dialog-actions>

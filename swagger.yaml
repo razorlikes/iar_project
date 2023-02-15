@@ -11,7 +11,7 @@ paths:
   /api/login:
     post:
       description: ''
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
@@ -19,7 +19,7 @@ paths:
           description: Unauthorized
     delete:
       description: ''
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
@@ -27,14 +27,14 @@ paths:
           description: Unauthorized
     get:
       description: ''
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
   /api/user:
     get:
       description: ''
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
@@ -43,7 +43,7 @@ paths:
   /api/people:
     get:
       description: ''
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
@@ -54,7 +54,7 @@ paths:
   /api/salesmen:
     get:
       description: 'List all salesmen'
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
@@ -62,7 +62,7 @@ paths:
           description: Internal Server Error
     delete:
       description: 'Delete all salesmen'
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
@@ -70,7 +70,7 @@ paths:
           description: Internal Server Error
     post:
       description: 'Add a new salesman'
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
@@ -135,7 +135,7 @@ paths:
   /api/evaluationRecords:
     get:
       description: 'List all evaluation records'
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
@@ -143,7 +143,7 @@ paths:
           description: Internal Server Error
     post:
       description: 'Add a new evaluation record'
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
@@ -240,7 +240,7 @@ paths:
   /api/ocrx/customers:
     get:
       description: 'Retrieve all customer from OpenCRX'
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
@@ -262,7 +262,7 @@ paths:
   /api/ocrx/orders:
     get:
       description: 'Retrieve all orders from OpenCRX'
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
@@ -284,7 +284,7 @@ paths:
   /api/ocrx/salesmen:
     get:
       description: 'Retrieve all salesmen from OpenCRX'
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK
@@ -323,7 +323,7 @@ paths:
   /api/ohrm/salesmen:
     get:
       description: 'Retrieve all salesmen from OrangeHRM'
-      parameters: []
+      parameters: [ ]
       responses:
         '200':
           description: OK

@@ -1,48 +1,49 @@
 const evaluationRecordsService = require("../services/evaluation-record-service");
 
-exports.getRecords = function (req, res){
+exports.getRecords = function (req, res) {
     const db = req.app.get('db');
 
     evaluationRecordsService.getRecords(db).then(records => {
         res.send(records);
-    }).catch(_=>{
+    }).catch(_ => {
         res.status(500).send();
     })
 }
 
-exports.getRecordByIdAndYear = function (req, res){
+exports.getRecordsById = function (req, res) {
     const db = req.app.get('db');
 
-    evaluationRecordsService.getRecordByIdAndYear(db, req.params).then(record => {
-        res.send(record);
-    }).catch(_=>{
+    evaluationRecordsService.getRecordsById(db, req).then(records => {
+        res.send(records);
+    }).catch(_ => {
         res.status(500).send();
     })
 }
+
 exports.createRecord = function (req, res) {
     const db = req.app.get('db');
 
-    evaluationRecordsService.createRecord(db, req.body).then(record => {
+    evaluationRecordsService.createRecord(db, req).then(record => {
         res.send(record);
-    }).catch(_=>{
+    }).catch(_ => {
         res.status(500).send();
     })
 }
-exports.updateRecord = function(req, res) {
+exports.updateRecord = function (req, res) {
     const db = req.app.get('db');
 
-    evaluationRecordsService.updateRecord(db, req.params, req.body).then(record => {
+    evaluationRecordsService.updateRecord(db, req).then(record => {
         res.send(record);
-    }).catch(_=>{
+    }).catch(_ => {
         res.status(500).send();
     })
 }
-exports.deleteRecord = function(req, res) {
+exports.deleteRecord = function (req, res) {
     const db = req.app.get('db');
 
-    evaluationRecordsService.deleteRecord(db, req.params).then(record => {
+    evaluationRecordsService.deleteRecord(db, req).then(record => {
         res.send(record);
-    }).catch(_=>{
+    }).catch(_ => {
         res.status(500).send();
     })
 }
